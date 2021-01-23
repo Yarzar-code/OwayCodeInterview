@@ -34,6 +34,11 @@ gem 'devise'
 gem "paperclip"
 # Use to render json obj in api
 gem 'active_model_serializers'
+
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
+gem "font-awesome-rails"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

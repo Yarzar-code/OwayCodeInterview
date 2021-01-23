@@ -1,12 +1,26 @@
 <h1>Lists of Cabs</h1>
 
-<%= link_to 'Add Cab', new_cab_path %>
-<ul>
-  <% @cabs.each do |cab| %>
-    <li>
-      <%= link_to cab.plate_number, cab_path(cab) %>
-      <%=cab.model%>
-      <%=cab.mileage%>
-    </li>
-  <%end%>
-</ul>
+<%= link_to 'Add Cab', new_cab_path, class: 'btn btn-primary btn-md m-2 float-right' %>
+<table class=" table table-striped sortable">
+ <thead>
+    <tr>
+      <th>Plate Number</th>
+      <th>Model</th>
+      <th>Mileage</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cabs.each do |cab| %>
+        <tr>
+          <td><%= link_to cab.plate_number, cab_path(cab) %></td>
+          <td><%=cab.model%></td>
+          <td><%=cab.mileage%></td>
+          <td>
+            <%= link_to "Edit", edit_cab_path(cab), class: 'btn btn-info btn-md' %>
+            <%= link_to "Delete", cab_path(cab), :method => :delete, class: 'btn btn-danger btn-md' %>
+          </td>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
