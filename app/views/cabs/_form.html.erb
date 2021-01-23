@@ -1,0 +1,24 @@
+<%= render 'shared/errors', object: cab %>
+<%= form_for cab do |f| %>
+  <div>
+    <%= f.label :plate_number %>
+    <%= f.text_field :plate_number %>
+  </div>
+
+  <div>
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+  </div>
+
+  <div>
+    <%= f.label :mileage %>
+    <%= f.text_field :mileage %>
+  </div>
+
+  <div>
+    <%= f.label :car_photo %>
+    <%= f.file_field :car_photo %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
