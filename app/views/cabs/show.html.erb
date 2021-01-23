@@ -1,0 +1,4 @@
+<h1><%= @cab.plate_number %></h1>
+<h1><%= @cab.model %></h1>
+<h1><%= @cab.mileage %></h1>
+<%= image_tag(@cab.car_photo.url) if @cab.car_photo.exists? %>

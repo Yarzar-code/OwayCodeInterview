@@ -1,0 +1,12 @@
+<h1>Lists of Cabs</h1>
+
+<%= link_to 'Add Cab', new_cab_path %>
+<ul>
+  <% @cabs.each do |cab| %>
+    <li>
+      <%= link_to cab.plate_number, cab_path(cab) %>
+      <%=cab.model%>
+      <%=cab.mileage%>
+    </li>
+  <%end%>
+</ul>
