@@ -1,4 +1,17 @@
-<h1><%= @cab.plate_number %></h1>
-<h1><%= @cab.model %></h1>
-<h1><%= @cab.mileage %></h1>
-<%= image_tag(@cab.car_photo.url) if @cab.car_photo.exists? %>
+<div class="d-flex justify-content-center">
+  <%= image_tag(@cab.car_photo.url, :class => "car-photo") if @cab.car_photo.exists? %>
+</div>
+
+<ul class="list-group mt-3">
+  <li class="list-group-item disabled">Cab Information</li>
+  <li class="list-group-item">Plate Number : <%= @cab.plate_number %></li>
+  <li class="list-group-item">Model : <%= @cab.model %></li>
+  <li class="list-group-item">Mileage : <%= @cab.mileage %></li>
+</ul>
+
+<div class="m-1">
+  <%= link_to "Edit", edit_cab_path(@cab), class: 'btn btn-info btn-md m-1' %>
+  <%= link_to "Delete", cab_path(@cab), :method => :delete, class: 'btn btn-danger btn-md m-1' %>
+  <%= link_to "Back", cabs_path, class: "btn btn-default btn-secondary m-1" %>
+</div>
+

@@ -1,8 +1,17 @@
 class CabsController < ApplicationController
-  before_action :set_cab, only: [:show, :edit]
+  before_action :set_cab, only: [:show, :edit, :update]
 
   def index
-    @cabs = Cab.order('created_at DESC')
+    @cabs = Cab.paginate(page: params[:page], per_page: 10)
+    respond_to do |format|
+      format.xlsx {
+        @cabs = Cab.order('created_at DESC')
+        response.headers[
+          'Content-Disposition'
+        ] = "attachment; filename=cabs.xlsx"
+      }
+      format.html { render :index }
+    end
   end
 
   def new
@@ -25,8 +34,6 @@ class CabsController < ApplicationController
   end
 
   def update
-    @cab = Cab.find(params[:id])
-
     if @cab.update(cab_params)
       redirect_to cabs_path
     else

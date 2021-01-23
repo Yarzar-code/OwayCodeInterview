@@ -1,24 +1,33 @@
 <%= render 'shared/errors', object: cab %>
-<%= form_for cab do |f| %>
-  <div>
-    <%= f.label :plate_number %>
-    <%= f.text_field :plate_number %>
+<%= form_for cab, :html => {:class => "form-horizontal center"} do |f| %>
+  <div class="form-group">
+    <%= f.label :plate_number, "Plate Number:", class: "col-md-4 control-label" %>
+    <div class="col-md-8">
+      <%= f.text_field :plate_number, class: "form-control" %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :model %>
-    <%= f.text_field :model %>
+  <div class="form-group">
+    <%= f.label :model, "Model:", class: "col-md-4 control-label" %>
+    <div class="col-md-8">
+      <%= f.text_field :model, class: "form-control" %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :mileage %>
-    <%= f.text_field :mileage %>
+  <div class="form-group">
+    <%= f.label :mileage, "Mileage:", class: "col-md-4 control-label" %>
+    <div class="col-md-8">
+      <%= f.text_field :mileage, class: "form-control"  %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :car_photo %>
-    <%= f.file_field :car_photo %>
+  <div class="form-group">
+    <%= f.label :car_photo, "Car Photo:", class: "col-md-4 control-label" %>
+    <div class="col-md-8">
+      <%= f.file_field :car_photo %>
+    </div>
   </div>
 
-  <%= f.submit %>
+  <%= f.submit "Submit", class: "btn btn-default btn-primary ml-3" %>
+  <%= link_to "Back", cabs_path, class: "btn btn-default btn-secondary" %>
 <% end %>

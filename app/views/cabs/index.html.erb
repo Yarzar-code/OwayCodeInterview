@@ -1,9 +1,15 @@
-<h1>Lists of Cabs</h1>
+<div class="row m-2">
+  <h4>Lists of Cabs</h4>
+  <div class="cab-add-export-row">
+    <%= link_to 'Add Cab', new_cab_path, class: 'btn btn-primary btn-md' %>
+    <%= link_to 'Download as Excel', cabs_path(format: :xlsx), class: 'btn btn-success btn-md' %>
+  </div>
+</div>
 
-<%= link_to 'Add Cab', new_cab_path, class: 'btn btn-primary btn-md m-2 float-right' %>
 <table class=" table table-striped sortable">
  <thead>
     <tr>
+      <th>#</th>
       <th>Plate Number</th>
       <th>Model</th>
       <th>Mileage</th>
@@ -11,8 +17,9 @@
     </tr>
   </thead>
   <tbody>
-    <% @cabs.each do |cab| %>
+    <% @cabs.each_with_index do |cab, index| %>
         <tr>
+          <td><%= index+1 %></td>
           <td><%= link_to cab.plate_number, cab_path(cab) %></td>
           <td><%=cab.model%></td>
           <td><%=cab.mileage%></td>
@@ -24,3 +31,4 @@
     <%end%>
   </tbody>
 </table>
+<%= will_paginate @posts %>

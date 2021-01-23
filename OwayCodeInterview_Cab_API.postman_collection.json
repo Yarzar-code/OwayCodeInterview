@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "21d3bb27-4346-4977-b543-241a3d1906b2",
+		"name": "OwayCodeInterview_Cab_API",
+		"description": "Get all cabs information or get one cab information with id key.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Cabs Information",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "a8d6fc82ffe0d740e878",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/get_all_cabs/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"get_all_cabs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one cab information with id key",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "a8d6fc82ffe0d740e878",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/get_cab/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"get_cab",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

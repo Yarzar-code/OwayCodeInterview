@@ -3,4 +3,5 @@ class Cab < ActiveRecord::Base
   validates_attachment :car_photo,
                      content_type: { content_type: /\Aimage\/.*\z/ },
                      size: { less_than: 5.megabyte }
+  validates :plate_number, presence: true, uniqueness: true
 end

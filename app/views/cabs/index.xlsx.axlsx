@@ -1,0 +1,14 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Cabs") do |sheet|
+  # Create the header row
+  sheet.add_row ["Plate Number", "Model", "Mileage", "Car Photo Url"]
+  # Create entries for each item
+  @cabs.each do |cab|
+    if cab.car_photo.exists?
+      sheet.add_row [cab.plate_number, cab.model, cab.mileage, image_url(cab.car_photo.url(:large))]
+    else
+      sheet.add_row [cab.plate_number, cab.model, cab.mileage, nil]
+    end
+  end
+end

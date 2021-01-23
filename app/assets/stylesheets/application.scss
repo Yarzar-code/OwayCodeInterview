@@ -14,10 +14,11 @@
  *= require_self
  */
  @import "bootstrap";
-//  #0A56BB
-@import "font-awesome";
 
-.center_div{
-  width: 50%;
-  margin: 50px auto;
+.cab-add-export-row{
+  margin-left: auto;
+}
+.car-photo{
+  max-width: 500px;
+  max-height: 500px;
 }

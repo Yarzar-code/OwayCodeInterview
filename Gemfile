@@ -36,9 +36,14 @@ gem "paperclip"
 gem 'active_model_serializers'
 
 gem 'bootstrap', '~> 4.4.1'
-gem 'jquery-rails'
-gem "font-awesome-rails"
 
+# Use to export excel file
+gem 'rubyzip', '>= 1.2.1'
+gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
+gem 'axlsx_rails'
+
+# Use to paginate
+gem 'will_paginate', '~> 3.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
