@@ -1,13 +1,14 @@
 <div class="container-fluid h-100 p-0">
-  <div class="row no-gutters h-100 align-items-md-center justify-content-md-center">
+  <div class="row no-gutters h-100 align-items-md-center justify-content-md-center mt-5">
     <div class="col col-md-6 card ">
       <div class='card-header bg-info text-center text-white mb-2'>
         <h2>Resend confirmation instructions</h2>
       </div>
       <div class='card-body'>
         <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-
+        <div class="form-group">
+          <%= render "devise/shared/error_messages", resource: resource %>
+        </div>
         <div class="form-group">
           <%= f.email_field :email, autofocus: true, autocomplete: "email",  value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: :'form-control', placeholder: :'E-mail' %>
         </div>

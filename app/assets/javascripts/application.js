@@ -17,3 +17,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+$( document ).on('turbolinks:load', function() {
+  $(".alert").delay(4000).slideUp(200, function() {
+    $(this).alert('close');
+  });
+});
