@@ -5,15 +5,14 @@
     Excel file download link for all cab's information
 
 - Ruby version
-  ruby 2.5.3p105
+  2.5.3p105
 
 - Rails version
-  rails 2.5.3
-
-API
+  4.2.10
+###### API
 Require authorization token to get cab information
-  key => Authorization
-  value => User.api_token
+  - key => Authorization
+  - value => User.api_token
 
-To create default user
+###### To create default user
   rake db:seed

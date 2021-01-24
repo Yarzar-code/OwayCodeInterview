@@ -40,7 +40,7 @@ gem 'bootstrap', '~> 4.4.1'
 # Use to export excel file
 gem 'rubyzip', '>= 1.2.1'
 gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
-gem 'axlsx_rails'
+gem 'caxlsx_rails'
 
 # Use to paginate
 gem 'will_paginate', '~> 3.1.0'
