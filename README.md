@@ -9,10 +9,10 @@
 
 - Rails version
   4.2.10
-###### API
+## API
 Require authorization token to get cab information
   - key => Authorization
   - value => User.api_token
 
-###### To create default user
+## To create default user
   rake db:seed
